@@ -1,0 +1,3 @@
+lgpio
+gpiozero
+adafruit-circuitpython-DHT
