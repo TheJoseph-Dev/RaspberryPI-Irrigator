@@ -1,5 +1,5 @@
 from Models.Component import *
-from gpiozero import PWMLED
+from Models.Analogic import *
 from gpiozero import LED as GP_LED
 
 from enum import Enum
@@ -12,19 +12,19 @@ class Color(Enum):
 
 class LED(Component):
 
-    LED_PWM: GP_LED
+    LED: GP_LED
     color: Color
 
     def __init__(self, color: Color):
         Component.__init__(self)
         
-        self.LED_PWM = GP_LED(color.value)
+        self.LED = GP_LED(color.value)
         self.color = color
 
     def update(self):
-        if self.is_active(): self.LED_PWM.on()
-        else: self.LED_PWM.off()
+        if self.is_active(): self.LED.on()
+        else: self.LED.off()
 
     def set_color(self, color: Color):
-        self.LED_PWM = GP_LED(color.value)
+        self.LED = GP_LED(color.value)
         self.color = color

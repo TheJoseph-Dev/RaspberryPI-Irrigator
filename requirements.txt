@@ -1,4 +1,4 @@
 lgpio
 gpiozero
 adafruit-circuitpython-DHT
-streamlit
+tb-mqtt-client

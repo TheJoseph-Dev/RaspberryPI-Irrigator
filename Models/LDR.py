@@ -5,9 +5,12 @@ class LDRSensor(Sensor, Analogic):
 
     __value: float
 
-    def __init__(self): 
+    def __init__(self, mcp_ch: int = 0): 
         Sensor.__init__(self, "LDR")
-        Analogic.__init__(self, 0)
+        Analogic.__init__(self, mcp_ch)
         self.__value = 0
 
-    def get_value(self) -> float: return self.__value
+    #def update(self): self.__value = self..get_value()
+    def get_sensor_value(self) -> float: 
+        self.__value = self.get_value()
+        return self.__value

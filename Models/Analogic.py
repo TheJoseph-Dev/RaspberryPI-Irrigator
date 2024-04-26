@@ -7,3 +7,5 @@ class Analogic:
     def __init__(self, mcp_ch: int) -> None:
         self.__mcp_ch = mcp_ch
         self.__MCP3008 = MCP3008(self.__mcp_ch)
+
+    def get_value(self) -> float: return self.__MCP3008.value

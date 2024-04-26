@@ -9,7 +9,7 @@ class DHT11Sensor(Sensor):
     __humidity: float
 
     # Initial the dht device, with data pin connected to:
-    __dhtDevice = adafruit_dht.DHT11(board.D17)
+    __dhtDevice = adafruit_dht.DHT11(board.D27)
 
     def __init__(self):
         Sensor.__init__(self, "DHT11")
