@@ -9,13 +9,13 @@ class DHT11Sensor(Sensor):
     __humidity: float
 
     # Initial the dht device, with data pin connected to:
-    __dhtDevice = adafruit_dht.DHT11(board.D27)
+    __dhtDevice: adafruit_dht.DHT11
 
-    def __init__(self):
+    def __init__(self, pin):
         Sensor.__init__(self, "DHT11")
         self.__temperature = 0
         self.__humidity = 0
-        #self.__dht11 = DHT11()        
+        self.__dhtDevice = adafruit_dht.DHT11(pin)        
 
     def get_temperature(self) -> float:
         if not self.is_active():
